@@ -5,22 +5,22 @@ services:
     image: nginx:latest
     container_name: web_nginx_1
     ports:
-      - "8081:80"  # Mappé sur le port 8081 de l'hôte
+      - "8081:80"  
     volumes:
-      - ./index.html:/usr/share/nginx/html/index.html # Monte le fichier index.html local dans le conteneur
+      - ./index.html:/usr/share/nginx/html/index.html 
 
   nginx2:
     image: nginx:latest
     container_name: web_nginx_2
     ports:
-      - "8082:80"  # Mappé sur le port 8082 de l'hôte
+      - "8082:80"  
     volumes:
-      - ./index.html:/usr/share/nginx/html/index.html # Monte le même fichier index.html
+      - ./index.html:/usr/share/nginx/html/index.html 
 
   apache:
-    image: httpd:latest # httpd est l'image officielle Apache HTTP Server
+    image: httpd:latest 
     container_name: web_apache
     ports:
-      - "8083:80"  # Mappé sur le port 8083 de l'hôte
+      - "8083:80"  
     volumes:
-      - ./index.html:/usr/local/apache2/htdocs/index.html # Le chemin par défaut pour Apache
+      - ./index.html:/usr/local/apache2/htdocs/index.html 
